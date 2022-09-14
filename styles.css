@@ -40,13 +40,17 @@ nav ul li:hover {
     background-color: black;
 }
 
+nav ul li:last-child {
+    border-right: 0;
+}
+
 .header {
     margin-top: 25px;
     padding: 0 20px;
     margin-left: 65%;
     margin-right: 1%;
-    background-color: #324;
-    color: aliceblue;
+    background-color: aliceblue;
+    color: #333;
 }
 
 #x {
