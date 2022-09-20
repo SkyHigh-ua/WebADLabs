@@ -59,7 +59,7 @@ nav ul li:last-child {
 main {
     display: grid;
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 5% auto auto;
+    grid-template-rows: minmax(5vh,auto) auto minmax(5vh, auto);
     grid-template-areas: 
     "lsidebar topticker rsidebar" 
     "lsidebar main rsidebar"
@@ -173,7 +173,7 @@ article img {
 
 .ticker ul li {
     float: left;
-    padding: 2% 5%;
+    padding: 2% 4%;
     text-align: center;
 }
 
