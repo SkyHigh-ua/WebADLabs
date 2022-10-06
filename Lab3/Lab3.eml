@@ -1,0 +1,397 @@
+Delivered-To: illya.rybalkaip15@gmail.com
+Received: by 2002:a25:4f07:0:0:0:0:0 with SMTP id d7csp464415ybb;
+        Thu, 6 Oct 2022 09:25:35 -0700 (PDT)
+X-Received: by 2002:a05:6102:418b:b0:3a6:ee1c:58b4 with SMTP id cd11-20020a056102418b00b003a6ee1c58b4mr565333vsb.72.1665073535695;
+        Thu, 06 Oct 2022 09:25:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1665073535; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dy0sTKlBSzLWEALdPfoB9NoM59AWHn8rmlbkbGc2TQccwDJMz+9E4lBw8T+v6cRUv+
+         8Lxbqk0sU0mDIuIdeTMovRdId1C0wXGtoy0pTKWZkBVq6unZpBD0lie1YhPteTJg2jrR
+         1E4bPeolguIszdNkAac/7FFcm6EpGLqAenm32I2JoPhSa8j6YtSse3QI14kjD9MdMLIc
+         JqOGBeaQ5sXQYb4WojqTBXexOJEfZVYLD8YyEg4lDKg/Wu+EU/pGXB5HbUw0HIHAJ7tg
+         estYFw4qJjCUetEFz6E36hoYHeQJeeP60NekpuHLvDJ/g7MZqlaZnESqu8U5xLzqsaie
+         9LbA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=3YQROur28uED62bv4MnRjrzFAtJVlxFVEUBmec935Po=;
+        b=ZxqNIR7YQYSf8rCtrdNZNPm7g5yEjPDCPPAVx6RSqgXTJgdN1+4yH6cQahV6yp2PAD
+         /IHWv0uUKQhJ3+I5/5YDzV0u3kFtyDXBNWsYIcp0lE1NSFsQVmUG3ff22L/NOo2f1QaY
+         zA2vUk3citD1MDHyiinZsivyqH04huc+vnxLQDDhcH0P9yTdzvb/DAVGaAviKDKczQdG
+         JLlza1nSgDMGyV7GTeBr57P1+4n+Ut2LP49KXrQTVcZU1r2xOV7xcdMKIDxms/UYFVxB
+         MNAHMgXQpcw7aJcCt4JodEMS3T7k3IfCZ+bPI93/DBtfGTtXPr6a5yKAK6tO9ZXwrD8u
+         v7WQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=LmIlxUhH;
+       spf=pass (google.com: domain of rybalka.illya@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rybalka.illya@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <rybalka.illya@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id r7-20020a1f2b07000000b003ab05f7dd51sor4903vkr.26.2022.10.06.09.25.35
+        for <illya.rybalkaip15@gmail.com>
+        (Google Transport Security);
+        Thu, 06 Oct 2022 09:25:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of rybalka.illya@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=LmIlxUhH;
+       spf=pass (google.com: domain of rybalka.illya@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rybalka.illya@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date;
+        bh=3YQROur28uED62bv4MnRjrzFAtJVlxFVEUBmec935Po=;
+        b=LmIlxUhHKJrE93aSH3pWjIws3CUZzF8n57eHrbhqC0iCfymuE+pBBiyhKzGBJAXppG
+         Htmfw3foQb1ESdhjcDbuhkApWRzrH9MnrAujX5Oq+fOntNdTrCrxsgdmqL13gHVu675C
+         yi8E4vMeVCEsWihma83sh0BmNCVAh7a0QRwqGxkLvCcNrBHbtWjoFytCiI71R+o6K9Nm
+         B6gkB9DmsNbA+z3AI2uh/Jl+t7bSnd1sZEo5y2UDyTniIrlFJZJfDWoZ40HE9cRg8vTi
+         70/4MVSz69kCJI2QshqPia00ypoQoXCKz8vtjPhy3FSOta7PZFpGrdtR7qjLvgs2ZL7Y
+         062A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date;
+        bh=3YQROur28uED62bv4MnRjrzFAtJVlxFVEUBmec935Po=;
+        b=idfiVKVvSaxfPY65L9gw802ZK/WmijHZA/tR5hcfheVzKtAZcpGVDWwoBE2mUmdQP8
+         7Zyl+QWny+vAv+XjNy5P66iQ6vTRFOXdJL9fXTJ+o01T9DZOnrI2u/LOup9jn6Q3iQJg
+         5ZVcNxGBTIy0mz5jg4PV16pX6ZMLPtArrApnuf4y/VCUj1GWI3CVKLRX9ZCrJB15t8X8
+         MwkTUTueeObY0FvNdFR7rRM7KWdVVOPYGiCT4qFwZ1ItI8XXXzASHPZ+PlgKVTv1WbYe
+         JkdxxDrqzObmOKUCjH3cpruV8tTTJuRbdO/6GpHAZKOIuhxVktiCGlCfFz4iqdPTRuqs
+         /jIA==
+X-Gm-Message-State: ACrzQf0qMPhCAdCeS5Z7MCj8h+A0Il/tIcLiVLDC2VFOVyxtHiaJwfNn
+	XM9xfyX4pSbNffjFY8QIJrIu32z/EnWWUOowZsV/OZWq
+X-Google-Smtp-Source: AMsMyM4C66bl2yLCz/RW/9FJSijPMb6hXCI8fmyMyL4Hovm6KhmW/D5W3SNrb8GFIlWRdu8fPfUwhxyafdgqvw0cPcc=
+X-Received: by 2002:a1f:2e82:0:b0:3aa:6f4c:d050 with SMTP id
+ u124-20020a1f2e82000000b003aa6f4cd050mr323297vku.8.1665073535213; Thu, 06 Oct
+ 2022 09:25:35 -0700 (PDT)
+MIME-Version: 1.0
+From: SkyHigh <rybalka.illya@gmail.com>
+Date: Thu, 6 Oct 2022 19:25:24 +0300
+Message-ID: <CAJEwD+tM4GnEKHYWAc7AEJ_nfn6d+idNacd05QZf4mfEGcFobA@mail.gmail.com>
+Subject: Lab3
+To: illya.rybalkaip15@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000009763fb05ea602431"
+
+--0000000000009763fb05ea602431
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+   - Labs <https://skyhighconstruction.github.io/index.html>
+
+Header
+
+   -
+
+   2022-02-22 22:22
+   Sample text
+
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+   adipisci nisi sed, vitae iste sint accusantium necessitatibus officiis
+   dolorem a asperiores molestiae quibusdam dignissimos laborum accusamus v=
+ero
+   ipsam dolores deleniti?
+   -
+
+   2022-02-22 22:22
+   Sample text 2
+
+   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quia
+   eos recusandae, numquam vero velit repellendus! Tempore id quaerat
+   dignissimos reprehenderit sapiente, veritatis nam praesentium repellendu=
+s
+   minus, molestias ullam magni.
+   -
+
+   2022-02-22 22:22
+   Sample text 3
+
+   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quia
+   eos recusandae, numquam vero velit repellendus! Tempore id quaerat
+   dignissimos reprehenderit sapiente, veritatis nam praesentium repellendu=
+s
+   minus, molestias ullam magni.
+   -
+
+   2022-02-22 22:22
+   Sample text 4
+
+   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+   incidunt tenetur nesciunt quas, unde dolores praesentium soluta consecte=
+tur
+   officiis doloribus nostrum delectus et adipisci mollitia! Impedit maxime
+   obcaecati nulla accusamus?
+   -
+
+   2022-02-22 22:22
+   Sample text 5
+
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+   qui, fugiat minima itaque sunt ipsam beatae necessitatibus amet, aperiam
+   explicabo illum, consequatur harum. Laborum voluptate ullam odit aperiam
+   rem sequi.
+
+*Weather-Kyiv, Ukraine* 17=C2=B0 =E2=98=81 Partly cloudy
+[image: placeholder]
+
+2022-02-22 22:22
+Sample text
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis sunt
+porro recusandae ipsam harum facilis voluptatem repellendus ea. Ipsa
+officia deleniti obcaecati distinctio itaque minus quas est laudantium cum
+delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad est
+id exercitationem perspiciatis, deleniti eligendi, minima aspernatur,
+aperiam ipsum cumque itaque tempora quibusdam in dolorem! Molestiae ipsam
+at harum laudantium.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex optio nulla
+fugit animi, voluptate laborum aliquam earum eveniet, corporis molestiae
+repellat voluptatibus fuga ratione, alias et ad labore nam repellendus?
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis sunt
+porro recusandae ipsam harum facilis voluptatem repellendus ea. Ipsa
+officia deleniti obcaecati distinctio itaque minus quas est laudantium cum
+delectus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad est
+id exercitationem perspiciatis, deleniti eligendi, minima aspernatur,
+aperiam ipsum cumque itaque tempora quibusdam in dolorem! Molestiae ipsam
+at harum laudantium.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla facere
+voluptate ducimus iure nam non nisi veritatis. Dignissimos temporibus autem
+tempore laudantium nulla enim! Repudiandae, perferendis! Quos voluptas
+consequuntur cumque!
+
+   - Category 1
+   - Category 2
+   - Category 3
+   - Category 4
+
+
+   - [image: placeholder]
+
+   2022-02-22 22:22
+   Sample text
+
+   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+   - [image: placeholder]
+
+   2022-02-22 22:22
+   Sample text
+
+   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+   - [image: placeholder]
+
+   2022-02-22 22:22
+   Sample text
+
+   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+
+   - YouTube <https://www.youtube.com>
+   - Twitter <https://twitter.com>
+   - Instagram <https://www.instagram.com>
+   - Facebook <https://www.facebook.com>
+   - GitHub <https://github.com>
+
+Footer
+
+--0000000000009763fb05ea602431
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"head" style=3D"display:inline-block;width:10=
+0%;background-color:rgb(51,51,51)">
+       =20
+            <ul style=3D"float:left;list-style-type:none;overflow:hidden;ba=
+ckground-color:rgb(51,51,51)">
+                <li style=3D"float:left;padding:10px 25px;text-align:center=
+;min-width:75px"><a href=3D"https://skyhighconstruction.github.io/index.htm=
+l" style=3D"font-size:large;color:aliceblue;text-decoration:none">Labs</a><=
+/li>
+              </ul>
+       =20
+        <div class=3D"header" style=3D"margin-top:25px;padding:0px 20px;mar=
+gin-left:85%;margin-right:1%;background-color:aliceblue;color:rgb(51,51,51)=
+">
+            <h2 id=3D"x" style=3D"text-align:center">Header</h2>
+        </div>
+    </div>
+    <div class=3D"main" style=3D"display:table;width:100%;height:auto;backg=
+round-color:rgb(245,245,245)">
+        <div class=3D"left" style=3D"vertical-align:top;display:table-cell;=
+width:75%;height:100%">=20
+            <div class=3D"left_table" style=3D"height:95%;display:table;wid=
+th:100%">
+                <div class=3D"sidebar" id=3D"two" style=3D"display:table-ce=
+ll;background-color:rgb(222,229,237);width:calc(33.3333%)">
+                    <ul style=3D"margin-top:8%;list-style-type:none">
+                        <li>
+                            <p style=3D"margin-right:8%">2022-02-22 22:22</=
+p>
+                            <h3 style=3D"margin-right:8%">Sample text</h3>
+                            <p style=3D"margin-right:8%">Lorem ipsum dolor =
+sit amet consectetur adipisicing elit. Mollitia adipisci nisi sed, vitae is=
+te sint accusantium necessitatibus officiis dolorem a asperiores molestiae =
+quibusdam dignissimos laborum accusamus vero ipsam dolores deleniti?</p>=20
+                        </li>
+                        <li>
+                            <p style=3D"margin-right:8%">2022-02-22 22:22</=
+p>
+                            <h3 style=3D"margin-right:8%">Sample text 2</h3=
+>
+                            <p style=3D"margin-right:8%">Lorem, ipsum dolor=
+ sit amet consectetur adipisicing elit. Ducimus quia eos recusandae, numqua=
+m vero velit repellendus! Tempore id quaerat dignissimos reprehenderit sapi=
+ente, veritatis nam praesentium repellendus minus, molestias ullam magni.</=
+p>        =20
+                        </li>
+                        <li>
+                            <p style=3D"margin-right:8%">2022-02-22 22:22</=
+p>
+                            <h3 style=3D"margin-right:8%">Sample text 3</h3=
+>
+                            <p style=3D"margin-right:8%">Lorem, ipsum dolor=
+ sit amet consectetur adipisicing elit. Ducimus quia eos recusandae, numqua=
+m vero velit repellendus! Tempore id quaerat dignissimos reprehenderit sapi=
+ente, veritatis nam praesentium repellendus minus, molestias ullam magni.</=
+p>        =20
+                        </li>
+                        <li>
+                            <p style=3D"margin-right:8%">2022-02-22 22:22</=
+p>
+                            <h3 style=3D"margin-right:8%">Sample text 4</h3=
+>
+                            <p style=3D"margin-right:8%">Lorem ipsum dolor,=
+ sit amet consectetur adipisicing elit. Veritatis incidunt tenetur nesciunt=
+ quas, unde dolores praesentium soluta consectetur officiis doloribus nostr=
+um delectus et adipisci mollitia! Impedit maxime obcaecati nulla accusamus?=
+</p>        =20
+                        </li>
+                        <li>
+                            <p style=3D"margin-right:8%">2022-02-22 22:22</=
+p>
+                            <h3 style=3D"margin-right:8%">Sample text 5</h3=
+>
+                            <p style=3D"margin-right:8%">Lorem ipsum dolor =
+sit amet consectetur adipisicing elit. Repudiandae qui, fugiat minima itaqu=
+e sunt ipsam beatae necessitatibus amet, aperiam explicabo illum, consequat=
+ur harum. Laborum voluptate ullam odit aperiam rem sequi.</p>=20
+                        </li>
+                    </ul>
+                </div>
+                <div class=3D"left_table_right" style=3D"display:table-cell=
+;vertical-align:top;width:calc(66.6667%)">
+                    <div class=3D"ticker" id=3D"three" style=3D"min-height:=
+5%;background-color:rgb(236,239,244)">
+                        <p style=3D"display:inline-block;padding:1% 10%"><s=
+trong>Weather-Kyiv, Ukraine</strong> 17=C2=B0 =E2=98=81 Partly cloudy</p>
+                    </div>
+                   =20
+                        <img src=3D"https://skyhighconstruction.github.io/L=
+ab1/image/placeholder.png" alt=3D"placeholder" style=3D"margin: 5% 8%; widt=
+h: 84%;">
+                        <p style=3D"margin:3% 8%">2022-02-22 22:22</p>
+                        <h1 style=3D"margin:0px 8%">Sample text</h1>
+                        <p style=3D"margin:3% 8%">Lorem, ipsum dolor sit am=
+et consectetur adipisicing elit. Corporis sunt porro recusandae ipsam harum=
+ facilis voluptatem repellendus ea. Ipsa officia deleniti obcaecati distinc=
+tio itaque minus quas est laudantium cum delectus! Lorem, ipsum dolor sit a=
+met consectetur adipisicing elit. Ad est id exercitationem perspiciatis, de=
+leniti eligendi, minima aspernatur, aperiam ipsum cumque itaque tempora qui=
+busdam in dolorem! Molestiae ipsam at harum laudantium.</p>
+                        <p style=3D"margin:3% 8%">Lorem ipsum dolor sit ame=
+t, consectetur adipisicing elit. Ex optio nulla fugit animi, voluptate labo=
+rum aliquam earum eveniet, corporis molestiae repellat voluptatibus fuga ra=
+tione, alias et ad labore nam repellendus?</p>
+                        <p style=3D"margin:3% 8%">Lorem, ipsum dolor sit am=
+et consectetur adipisicing elit. Corporis sunt porro recusandae ipsam harum=
+ facilis voluptatem repellendus ea. Ipsa officia deleniti obcaecati distinc=
+tio itaque minus quas est laudantium cum delectus! Lorem, ipsum dolor sit a=
+met consectetur adipisicing elit. Ad est id exercitationem perspiciatis, de=
+leniti eligendi, minima aspernatur, aperiam ipsum cumque itaque tempora qui=
+busdam in dolorem! Molestiae ipsam at harum laudantium.</p>
+                        <p style=3D"margin:3% 8%">Lorem ipsum dolor sit ame=
+t, consectetur adipisicing elit. Nulla facere voluptate ducimus iure nam no=
+n nisi veritatis. Dignissimos temporibus autem tempore laudantium nulla eni=
+m! Repudiandae, perferendis! Quos voluptas consequuntur cumque!</p>
+                   =20
+                </div>
+            </div>
+            <div class=3D"ticker" id=3D"six" style=3D"float:left;width:100%=
+;min-height:5%;background-color:rgb(196,203,219)">
+                <ul style=3D"display:inline;list-style-type:none;overflow:h=
+idden">
+                    <li style=3D"float:left;padding:2% 5%;text-align:center=
+">Category 1</li>
+                    <li style=3D"float:left;padding:2% 5%;text-align:center=
+">Category 2</li>=20
+                    <li style=3D"float:left;padding:2% 5%;text-align:center=
+">Category 3</li>
+                    <li style=3D"float:left;padding:2% 5%;text-align:center=
+">Category 4</li>
+                </ul>
+            </div>
+        </div>=20
+        <div class=3D"right sidebar" id=3D"four" style=3D"display:table-cel=
+l;height:100%;width:100%;background-color:rgb(222,229,237)">
+            <ul style=3D"margin-top:8%;list-style-type:none">
+                <li>
+                    <img src=3D"https://skyhighconstruction.github.io/Lab1/=
+image/placeholder.png" alt=3D"placeholder" style=3D"clear: both; margin-rig=
+ht: 8%; width: 90%; height: auto;">
+                    <p style=3D"margin-right:8%">2022-02-22 22:22</p>
+                    <h3 style=3D"margin-right:8%">Sample text</h3>
+                    <p style=3D"margin-right:8%">Lorem ipsum dolor sit amet=
+, consectetur adipisicing elit.</p>=20
+                </li>
+                <li>
+                    <img src=3D"https://skyhighconstruction.github.io/Lab1/=
+image/placeholder.png" alt=3D"placeholder" style=3D"clear: both; margin-rig=
+ht: 8%; width: 90%; height: auto;">
+                    <p style=3D"margin-right:8%">2022-02-22 22:22</p>
+                    <h3 style=3D"margin-right:8%">Sample text</h3>
+                    <p style=3D"margin-right:8%">Lorem ipsum dolor sit amet=
+, consectetur adipisicing elit.</p>=20
+                </li>
+                <li>
+                    <img src=3D"https://skyhighconstruction.github.io/Lab1/=
+image/placeholder.png" alt=3D"placeholder" style=3D"clear: both; margin-rig=
+ht: 8%; width: 90%; height: auto;">
+                    <p style=3D"margin-right:8%">2022-02-22 22:22</p>
+                    <h3 style=3D"margin-right:8%">Sample text</h3>
+                    <p style=3D"margin-right:8%">Lorem ipsum dolor sit amet=
+, consectetur adipisicing elit.</p>=20
+                </li>
+            </ul>
+        </div> =20
+       =20
+    </div>
+
+    <div class=3D"footer" style=3D"display:inline-block;width:100%;backgrou=
+nd-color:rgb(51,51,51)">
+        <ul style=3D"max-width:75%;float:left;list-style-type:none;overflow=
+:hidden;background-color:rgb(51,51,51)">
+            <li style=3D"float:left;padding:15px 0px 15px 20px;min-width:75=
+px"><a href=3D"https://www.youtube.com" style=3D"text-decoration:none;color=
+:aliceblue;font-size:medium">YouTube</a></li>
+            <li style=3D"float:left;padding:15px 0px 15px 20px;min-width:75=
+px"><a href=3D"https://twitter.com" style=3D"text-decoration:none;color:ali=
+ceblue;font-size:medium">Twitter</a></li>
+            <li style=3D"float:left;padding:15px 0px 15px 20px;min-width:75=
+px"><a href=3D"https://www.instagram.com" style=3D"text-decoration:none;col=
+or:aliceblue;font-size:medium">Instagram</a></li>
+            <li style=3D"float:left;padding:15px 0px 15px 20px;min-width:75=
+px"><a href=3D"https://www.facebook.com" style=3D"text-decoration:none;colo=
+r:aliceblue;font-size:medium">Facebook</a></li>
+            <li style=3D"float:left;padding:15px 0px 15px 20px;min-width:75=
+px"><a href=3D"https://github.com" style=3D"text-decoration:none;color:alic=
+eblue;font-size:medium">GitHub</a></li>
+        </ul>
+        <div class=3D"header" style=3D"margin-top:25px;padding:0px 20px;mar=
+gin-left:85%;margin-right:1%;background-color:aliceblue;color:rgb(51,51,51)=
+"><h2 id=3D"y" style=3D"text-align:right">Footer</h2></div>
+    </div>
+
+
+<br></div>
+
+--0000000000009763fb05ea602431--
