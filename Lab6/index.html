@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 3</title>
+    <link href="./styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8d1306e480.js" crossorigin="anonymous"></script>
+    <script src="./masonry.pkgd.min.js"></script>
+</head>
+<body>
+    <header>
+        <input class='mobilemenu barscheck' type="checkbox" id='barscheck'/>
+        <label class="mobilemenu hambicon" for="barscheck"><span class="xicon"></span></label>
+        <div class='header'>
+            <h2 id="x">Header</h2>
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="/index.html">Labs</a></li>
+                <li><a href="./page.html">Second page</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+            <div class="sidebar" id="two">
+                <ul>
+                    <li>
+                        <p>2022-02-22 22:22</p>
+                        <h3>Sample text</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia adipisci nisi sed, vitae iste sint accusantium necessitatibus officiis dolorem a asperiores molestiae quibusdam dignissimos laborum accusamus vero ipsam dolores deleniti?</p> 
+                    </li>
+                    <li>
+                        <p>2022-02-22 22:22</p>
+                        <h3>Sample text 2</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quia eos recusandae, numquam vero velit repellendus! Tempore id quaerat dignissimos reprehenderit sapiente, veritatis nam praesentium repellendus minus, molestias ullam magni.</p>         
+                    </li>
+                    <li>
+                        <p>2022-02-22 22:22</p>
+                        <h3>Sample text 3</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quia eos recusandae, numquam vero velit repellendus! Tempore id quaerat dignissimos reprehenderit sapiente, veritatis nam praesentium repellendus minus, molestias ullam magni.</p>         
+                    </li>
+                    <li>
+                        <p>2022-02-22 22:22</p>
+                        <h3>Sample text 4</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis incidunt tenetur nesciunt quas, unde dolores praesentium soluta consectetur officiis doloribus nostrum delectus et adipisci mollitia! Impedit maxime obcaecati nulla accusamus?</p>         
+                    </li>
+                    <li>
+                        <p>2022-02-22 22:22</p>
+                        <h3>Sample text 5</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae qui, fugiat minima itaque sunt ipsam beatae necessitatibus amet, aperiam explicabo illum, consequatur harum. Laborum voluptate ullam odit aperiam rem sequi.</p> 
+                    </li>
+                </ul>
+            </div>
+            <div class="ticker" id="three">
+                <p><strong>Weather-Kyiv, Ukraine</strong> 17° &#9729; Partly cloudy</p>
+            </div>
+            <div class="sidebar" id="four">
+                <ul>
+                    <li>
+                        <img src="./image/placeholder.png" alt="placeholder">
+                        <p>2022-02-22 22:22</p>
+                        <h3>Sample text</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+                    </li>
+                    <li>
+                        <img src="./image/placeholder.png" alt="placeholder">
+                        <p>2022-02-22 22:22</p>
+                        <h3>Sample text</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+                    </li>
+                    <li>
+                        <img src="./image/placeholder.png" alt="placeholder">
+                        <p>2022-02-22 22:22</p>
+                        <h3>Sample text</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+                    </li>
+                </ul>
+            </div>  
+            <article id="five">
+                <p id="inputform">
+                    <label for="textarea">Введіть текст або посилання на зображення:</label><br>
+                    <textarea id="content" name="content" cols="50" rows="5" style="resize: none;"></textarea><br>
+                    <label for="textarea">Введіть розмір блоку:</label><br>
+                    <input type="number" id="itemwidth" name="itemwidth" min="1" max="10" value="1"> <strong>X</strong>
+                    <input type="number" id="itemheight" name="itemheight" min="1" max="10" value="1"><br>
+                    <input type="submit" id="subbutton" value="Submit">
+                    <input type="button" id="clean" value="Clean">
+                </p>
+                <div class="grid js-masonry">
+                    <div class="grid-item"></div>
+                    <div class="grid-item grid-item--width2"></div>
+                    <div class="grid-item grid-item--height2"></div>
+                    <div class="grid-item grid-item--height2"></div>
+                    <div class="grid-item grid-item--width2"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item grid-item--width2 grid-item--height2"></div>
+                    <div class="grid-item grid-item--height2"></div>
+                    <div class="grid-item grid-item--width2"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item grid-item--height2"></div>
+                    <div class="grid-item"></div>
+                </div>    
+            </article>
+            <div class="ticker" id="six">
+                <ul>
+                    <li>Category 1</li>
+                    <li>Category 2</li> 
+                    <li>Category 3</li>
+                    <li>Category 4</li>  
+                    <li>Category 5</li>   
+                </ul>
+            </div>
+        </div>         
+    </main>
+    <footer>
+        <ul>
+            <li><a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="https://github.com"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+        <div class='header'><h2 id="y">Footer</h2></div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
