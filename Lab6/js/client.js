@@ -1,28 +1,9 @@
 'use strict';
 
-new Masonry( '.grid', {
-    itemSelector: '.grid-item'
-});
-let sub = document.getElementById('subbutton');
-let clean = document.getElementById('clean');
-sub.addEventListener('click', function(evt){
-    evt.preventDefault();
-    let url = false;
-    let content = document.getElementById("content").value;
+function createcontent(url, content, itemheight, itemwidth) {
     let grid = document.getElementsByClassName('grid')[0];
-    if (content.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}(\.[a-z]{2,6})?(\:[0-9]{2,6})?\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(((\.png)|(\.jpg)|(\.jpeg)){1})/g) !== null) {
-        if (confirm('Виявлено посилання на зображення, використати його?')) {
-            url = true;
-        }
-    } 
     let itemclass = 'grid-item';
-    let itemwidth = parseInt(document.getElementById('itemwidth').value);
-    let itemheight = parseInt(document.getElementById('itemheight').value);
     let style = '';
-    if (itemwidth >10 || itemheight>10) {
-        alert('Розмір блоку більший 10');
-        return;
-    }
     if (itemwidth > 1) {
         itemclass += ` grid-item--width${itemwidth}`
         style += `width:  calc(${10*itemwidth}% - 4px);`
@@ -45,12 +26,49 @@ sub.addEventListener('click', function(evt){
     if (style !== '') {
         grid.lastChild.style = style;
     }
-    new Masonry( grid, {
+}
+
+async function test() {
+    let data = await fetch("http://127.0.0.1:5000/data", 
+        {
+            method: 'GET'
+        }).then(res => res.json());
+    for (const content of data) {
+        createcontent(content[0], content[1], content[2], content[3]);
+    }
+    new Masonry( document.getElementsByClassName('grid')[0], {
         itemSelector: '.grid-item'
     });
-});
+}
 
-clean.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    document.getElementsByClassName('grid')[0].innerHTML = '';
-})
+async function subbutton(data) {
+    await fetch("http://127.0.0.1:5000/data", 
+        {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+        body:JSON.stringify(data)
+        }).then((response) => {
+            console.log(response.status)
+            }).catch((error) => {
+            console.log(error)
+        });
+}
+
+async function clearbutton() {
+    await fetch("http://127.0.0.1:5000/data", 
+        {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+        body:JSON.stringify('clear')
+        }).then((response) => {
+            console.log(response.status)
+            }).catch((error) => {
+            console.log(error)
+        });
+}
+
+test();
