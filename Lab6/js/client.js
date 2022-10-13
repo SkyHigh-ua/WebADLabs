@@ -28,7 +28,7 @@ function createcontent(url, content, itemheight, itemwidth) {
     }
 }
 
-async function test() {
+async function onstart() {
     let data = await fetch("http://127.0.0.1:5000/data", 
         {
             method: 'GET'
@@ -71,4 +71,4 @@ async function clearbutton() {
         });
 }
 
-test();
+onstart();
