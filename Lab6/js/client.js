@@ -19,7 +19,7 @@ function createcontent(url, content, itemheight, itemwidth) {
             grid.innerHTML+=`<div class="${itemclass}"></div>`
         }
         else{
-            content = content.replaceAll('lorem', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae qui, fugiat minima itaque sunt ipsam beatae necessitatibus amet, aperiam explicabo illum, consequatur harum. Laborum voluptate ullam odit aperiam rem sequi.');
+            content = `${content}`.replaceAll('lorem', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae qui, fugiat minima itaque sunt ipsam beatae necessitatibus amet, aperiam explicabo illum, consequatur harum. Laborum voluptate ullam odit aperiam rem sequi.');
             grid.innerHTML+=`<div class="${itemclass}"><p>${content}</p></div>`
         }
     }
