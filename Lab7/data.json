@@ -1,0 +1,39 @@
+{
+    "styles": {
+        "neutral": [
+            ".buttons {background-color: white;padding: 2% 7%;margin: 1%;border: 2px solid #333;border-radius: 4px;font-size: large;text-align: center;font-weight: bold;text-decoration: none;}",
+            ".buttons:hover {background-color: #333;color: white;}",
+            "#playbutton {margin: 5% calc(43% - 1.9vw);}",
+            "#work {display: none;position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%);z-index: 999;width: calc(50% + 10px);height: calc(70% + 50px);background-color: #C4CBDB;border: 3px solid #333;}",
+            "#work #messagebox {position: absolute;top: 0;right: 0;margin: 1% 2%;overflow: hidden;}",
+            "#work .message {position: relative;top: 0;margin: 0;text-align: right;font-size: large;}",
+            "#anim {position: absolute;width: calc(100% - 10px);height: 70%;bottom: 0;left: 0;border: 5px solid firebrick;}",
+            ".buttonchangeroff {animation: off .5s;}",
+            ".buttonchangeron {animation: on .5s;}",
+            ".showsq {animation: fadeIn .5s;}",
+            ".hidesq{animation: fadeOut 1s;}",
+            "@keyframes fadeIn {0% { opacity: 0; }100% { opacity: 1; }}",
+            "@keyframes fadeOut {0% { opacity: 1; }100% { opacity: 0; }}",
+            "@keyframes off {from {transform: scale(1,1) translateZ(1px);}to {transform: scale(0,0) translateZ(1px)}}",
+            "@keyframes on {from {transform: scale(0,0) translateZ(1px);}to {transform: scale(1,1) translateZ(1px)}}"
+        ],
+        "main": [
+            "#anim img{width: 100%;height: 100%;background-repeat: repeat;animation: animatedimage .5s ease;}",
+            "#square {position: absolute;background-color: white;top: 0;border: 2px solid tomato;width: 6px;height: 6px;z-index: 1000;}",
+            "@keyframes animatedimage {from {transform: scale(0,0) translateZ(1px);}to {transform: scale(1,1) translateZ(1px)}}"
+        ],
+        "canvas": [
+            "#square {position: absolute;width: calc(100% - 10px);height: calc(70% + 5px);bottom: 0;left: 50%;transform: translate(-50%);z-index: 1000;}"
+        ]
+    },
+    "html": {
+        "central": "<input type=\"button\" class=\"buttons\" id=\"playbutton\"><div id=\"forp\"></div>",
+        "main": "<div id=\"work\"><input type=\"button\" class=\"buttons\" id=\"closebutton\"><br><input type=\"button\" class=\"buttons\" id=\"squarebutton\"><div id=\"messagebox\"></div><div id=\"anim\"><img></div></div>",
+        "canvas": "<div id=\"work\"><input type=\"button\" class=\"buttons\" id=\"closebutton\"><br><input type=\"button\" class=\"buttons\" id=\"squarebutton\"><div id=\"messagebox\"></div><canvas id=\"anim\"></canvas><canvas id=\"square\"></canvas></div>"
+    },
+    "buttons": {
+        "playbutton": "PLAY",
+        "closebutton": "close",
+        "squarebutton": "start"
+    }
+}

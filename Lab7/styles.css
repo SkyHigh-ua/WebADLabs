@@ -1,0 +1,462 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	background-color: #333;
+	color: #333;
+}
+
+@media only screen and (max-device-width: 766px) {
+    header {
+        position: sticky;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        top: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    nav {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 4em;
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    #menu {
+        padding: 0;
+        list-style: none;
+    }
+
+    #menu li{
+        border-top: 3px solid aliceblue;
+    }
+
+    #menu a{
+        text-decoration: none;
+        font-size: 1.5em;
+        display: block;
+        padding: 30px 5%;
+        color: aliceblue;
+    }
+    #menu li:hover{
+        background-color: black;
+    }
+    
+    nav {
+        max-height: 0;
+        transition: max-height .5s ease-out;
+    }
+
+    .hambicon {
+        float: left;
+        padding: 10px 25px;
+        margin: 2.5% 0;
+    }
+
+    .xicon {
+        background: aliceblue;
+        display: block;
+        height: 0.5vh;
+        position: relative;
+        width: 50px;
+    }
+
+    .xicon::before,
+    .xicon::after{
+        background: aliceblue;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    .xicon::before{
+        top: 1em;
+    }
+    .xicon::after{
+        top: -1em;
+    }
+
+    #barscheck {
+        display: none;
+    }
+
+    .barscheck:checked ~ nav{
+        max-height: 100%;
+    }
+
+    .barscheck:checked ~ .hambicon .xicon {
+        background: transparent;
+    }
+    .barscheck:checked ~ .hambicon .xicon::before {
+        transform: rotate(-45deg);
+        top:0;
+    }
+    
+    .barscheck:checked ~ .hambicon .xicon::after {
+        transform: rotate(45deg);
+        top:0;
+    }
+
+    .header {
+        float: right;
+        width: 15%;
+        height: fit-content;
+        margin: auto 1%;
+        padding: 0 5%;
+        background-color: aliceblue;
+        color: #333;
+        text-align: right;
+    }
+
+    .header h2 { 
+        width: 100%;
+        margin: auto;
+        font-size: 2em;
+    }
+
+    #x {
+        text-align: center;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: minmax(5vh,auto) auto minmax(5vh, auto);
+        grid-template-areas: 
+        "lsidebar topticker rsidebar" 
+        "lsidebar main rsidebar"
+        "bottomticker bottomticker rsidebar";
+        margin-top: -5px;
+        width: 100%;
+        background-color: #F5F5F5;
+    }
+    
+    #two {
+        grid-area: lsidebar;
+        background-color: #DEE5ED;
+    }
+    
+    #three {
+        grid-area: topticker;
+        background-color: #ECEFF4;
+    }
+    
+    #four{
+        grid-area: rsidebar;
+        background-color: #DEE5ED;
+    }
+    
+    #five {
+        grid-area: main;
+    }
+    
+    #six {
+        grid-area: bottomticker;
+        background-color: #C4CBDB;
+    }
+
+    footer {
+        margin-bottom: -10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #333;
+    }
+    
+    footer ul{
+        float: left;
+        list-style-type: none;
+        overflow: hidden;
+    }
+    
+    footer ul li{
+        float: left;
+        padding: 15px 0px;
+        padding-left: 20px;
+        min-width: 75px;
+    }
+    
+    footer ul li a{
+        color: aliceblue;
+        font-size: large;
+    }
+
+    footer ul li a{
+        font-size: 1.5em;
+    }
+    
+    #y {
+        text-align: right;
+    }
+
+    article h1 {
+        margin: 0 8%;
+    }
+    
+    article p {
+        font-size: small;
+        margin: 3% 8%;
+    }
+    
+    article ol {
+        font-size: large;
+        margin: 3% 5%;
+    }
+    
+    article img {
+        margin: 5% 8%;
+        width: 84%;
+    }
+    
+    .sidebar ul {
+        margin-top: 8%;
+        list-style-type: none;
+    }
+    
+    .sidebar img {
+        clear: both;
+        margin-right: 8%;
+        width: 90%;
+        height: auto;
+    }
+    
+    .sidebar h3 {
+        font-size: small;
+        margin-right: 8%;
+    }
+    
+    .sidebar p {
+        font-size: 0.5em;
+        margin-right: 8%;
+    }
+    
+    .sidebar a {
+        font-size: 0.5em;
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .ticker ul {
+        display: inline;
+        list-style-type: none;
+        overflow: hidden;
+    }
+    
+    .ticker ul li {
+        font-size: 1.25em;
+        float: left;
+        padding: 2% 2.5%;
+        text-align: center;
+    }
+    
+    .ticker p {
+        font-size: 1.5em;
+        display: inline-block;
+        padding: 1% 5%;
+    }
+}
+
+@media only screen and (min-device-width: 767px) {
+    header {
+        position: sticky;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        top: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .mobilemenu {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+        float: left;
+        list-style-type: none;
+        overflow: hidden;
+    }
+
+    #menu li {
+        float: left;
+        padding: 10px 25px;
+        text-align: center;
+        border-right: 1px solid azure;
+        min-width: 75px;
+    }
+
+    #menu li a {
+        font-size: large;
+        color: aliceblue;
+        text-decoration: none;
+    }
+    
+    #menu li:hover {
+        background-color: black;
+    }
+    
+    #menu li:last-child {
+        border-right: 0;
+    }
+    
+    .header {
+        width: 15%;
+        height: fit-content;
+        margin: auto 1%;
+        padding: 0 2%;
+        background-color: aliceblue;
+        color: #333;
+        text-align: right;
+    }
+
+    .header h2 { 
+        width: 100%;
+        margin: auto;
+    }
+
+    #x {
+        text-align: center;
+    }
+    
+    main {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: minmax(5vh,auto) auto minmax(5vh, auto);
+        grid-template-areas: 
+        "lsidebar topticker rsidebar" 
+        "lsidebar main rsidebar"
+        "bottomticker bottomticker rsidebar";
+        margin-top: -5px;
+        width: 100%;
+        background-color: #F5F5F5;
+    }
+    
+    #two {
+        grid-area: lsidebar;
+        background-color: #DEE5ED;
+    }
+    
+    #three {
+        grid-area: topticker;
+        background-color: #ECEFF4;
+    }
+    
+    #four{
+        grid-area: rsidebar;
+        background-color: #DEE5ED;
+    }
+    
+    #five {
+        grid-area: main;
+    }
+    
+    #six {
+        grid-area: bottomticker;
+        background-color: #C4CBDB;
+    }
+    
+    footer {
+        margin-bottom: -10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #333;
+    }
+    
+    footer ul{
+        float: left;
+        list-style-type: none;
+        overflow: hidden;
+    }
+    
+    footer ul li{
+        float: left;
+        padding: 15px 0px;
+        padding-left: 20px;
+        min-width: 75px;
+    }
+    
+    footer ul li a{
+        color: aliceblue;
+        font-size: large;
+    }
+    
+    #y {
+        text-align: right;
+    }
+    
+    article h1 {
+        margin: 0 8%;
+    }
+    
+    article p {
+        margin: 3% 8%;
+    }
+    
+    article ol {
+        font-size: large;
+        margin: 3% 5%;
+    }
+    
+    article img {
+        margin: 5% 8%;
+        width: 84%;
+    }
+    
+    .sidebar ul {
+        margin-top: 8%;
+        list-style-type: none;
+    }
+    
+    .sidebar img {
+        clear: both;
+        margin-right: 8%;
+        width: 90%;
+        height: auto;
+    }
+    
+    .sidebar h3 {
+        margin-right: 8%;
+    }
+    
+    .sidebar p {
+        margin-right: 8%;
+    }
+    
+    .sidebar a {
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .ticker ul {
+        display: inline;
+        list-style-type: none;
+        overflow: hidden;
+    }
+    
+    .ticker ul li {
+        float: left;
+        padding: 2% 4%;
+        text-align: center;
+    }
+    
+    .ticker p {
+        display: inline-block;
+        padding: 1% 10%;
+    }
+}
