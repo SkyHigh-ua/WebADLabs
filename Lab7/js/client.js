@@ -2,7 +2,7 @@
 
 async function onstart() {
     let path = location.href.split("/").slice(-1)[0] === 'index.html' ? "main" : "canvas"; 
-    let data = await fetch(`http://127.0.0.1:5000/data/${path}`, 
+    let data = await fetch(`http://3.73.32.179:8080/data/${path}`,
         {
             method: 'GET'
         }).then(res => res.json());

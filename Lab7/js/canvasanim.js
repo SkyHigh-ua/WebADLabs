@@ -9,7 +9,7 @@ async function main(){
     let anim = document.getElementById('anim');
     let context = anim.getContext("2d");
     let img = new Image();
-    img.src = 'http://127.0.0.1:5000/serverimage';
+    img.src = 'http://3.73.32.179:8080/serverimage';
     let square = document.getElementById('square');
     let sqctx = square.getContext("2d");
     let playbutton = document.getElementById('playbutton');
