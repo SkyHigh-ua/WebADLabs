@@ -7,7 +7,7 @@ async function main(){
     }
     let work = document.getElementById('work');
     let anim = document.getElementById('anim');
-    anim.querySelector('img').style.background = `url(http://3.73.32.179:8080/serverimage)`;
+    anim.querySelector('img').style.background = `url(https://websrv.site/serverimage)`;
     let playbutton = document.getElementById('playbutton');
     let closebutton = document.getElementById('closebutton');
     let button = document.getElementById('squarebutton');
